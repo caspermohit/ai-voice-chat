@@ -5,7 +5,8 @@ import ChatHistory from './components/ChatHistory';
 import GeminiService from './services/GeminiService';
 import './App.css';
 
-const API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
+// Remove or comment out this line:
+// const API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -17,7 +18,8 @@ function App() {
 
   useEffect(() => {
     try {
-      geminiService.current = new GeminiService(API_KEY);
+      // Update this line to use an environment variable
+      geminiService.current = new GeminiService(process.env.REACT_APP_GEMINI_API_KEY);
     } catch (err) {
       setError(err.message);
     }
