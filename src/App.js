@@ -5,7 +5,7 @@ import ChatHistory from './components/ChatHistory';
 import GeminiService from './services/GeminiService';
 import './App.css';
 
-const API_KEY = 'AIzaSyAGmbqdAe6d72PLOG58U6d_rcExmb8boow';
+const API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
 
 function App() {
   const [messages, setMessages] = useState([]);
