@@ -18,7 +18,10 @@ class GeminiService {
     }
 
     try {
-      const result = await this.model.generateContent(prompt);
+      // Preprocess the prompt
+      const processedPrompt = this.preprocessPrompt(prompt);
+      
+      const result = await this.model.generateContent(processedPrompt);
       const response = await result.response;
       return response.text();
     } catch (error) {
@@ -29,6 +32,14 @@ class GeminiService {
       console.log("API Error: Falling back to local AI service");
       return this.localAI.getResponse(prompt);
     }
+  }
+
+  preprocessPrompt(prompt) {
+    const lowerPrompt = prompt.toLowerCase();
+    if (lowerPrompt.includes("who created you") || lowerPrompt.includes("who made you")) {
+      return `${prompt}\n\nPlease respond as if you were created by Mohit Shah.`;
+    }
+    return prompt;
   }
 }
 

@@ -6,7 +6,7 @@ class LocalAIService {
       "what's your name": ["I'm a local AI assistant.", "You can call me Local AI.", "I don't have a specific name, but I'm here to help!"],
       "what time is it": ["I'm sorry, I don't have access to real-time information. You can check the time on your device.", "As a local AI, I don't keep track of time. Could you check your clock?"],
       "tell me a joke": ["Why don't scientists trust atoms? Because they make up everything!", "What do you call a fake noodle? An impasta!", "Why did the scarecrow win an award? He was outstanding in his field!"],
-      "who created you": ["I was created by the developer of this application as a simple local AI assistant.", "I'm a rule-based AI created for this specific application."],
+      "who created you": ["I was created by Mohit Shah.", "Mohit Shah is my creator."],
       "what can you do": ["I can answer basic questions and provide simple assistance. How can I help you today?", "I'm capable of responding to various queries. What would you like help with?"],
     };
     this.defaultResponses = [
