@@ -47,7 +47,7 @@ const VoiceInput = ({ onSpeechInput }) => {
         recognition.stop();
       }
     };
-  }, [recognition]); // Added 'recognition' as a dependency
+  }, [recognition, onSpeechInput]); // Added 'onSpeechInput' to the dependency array
 
   return (
     <div className="voice-input">
