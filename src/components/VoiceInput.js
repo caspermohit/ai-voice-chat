@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-const VoiceInput = ({ onSpeechInput }) => {
+const VoiceInput = ({ onSpeechInput, disabled }) => {
   const [isListening, setIsListening] = useState(false);
   const [recognition, setRecognition] = useState(null);
 
@@ -52,6 +52,7 @@ const VoiceInput = ({ onSpeechInput }) => {
   return (
     <div className="voice-input">
       <button
+        disabled={disabled}
         onMouseDown={startListening}
         onMouseUp={stopListening}
         onMouseLeave={stopListening}
